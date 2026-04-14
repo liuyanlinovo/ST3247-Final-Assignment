@@ -1,4 +1,4 @@
-# ST3247-Final-Assignment
+# ST3247-Assignment
 
 Epidemic Parameter Inference on Adaptive Networks
 
