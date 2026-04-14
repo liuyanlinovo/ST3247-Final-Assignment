@@ -53,7 +53,6 @@ def run_abc_inference(obs_data, num_simulations=1000):
 if __name__ == "__main__":
     x_obs = load_observed_data()
     
-    # Run 2000 simulations
     df_results = run_abc_inference(x_obs, num_simulations=2000)
     
     # Accept top 5% samples as posterior
@@ -62,12 +61,11 @@ if __name__ == "__main__":
     posterior_samples = df_results[df_results['distance'] <= threshold]
     
     # Output results
-    print("\n" + "="*30)
+    print("Results are as follows.")
     means = posterior_samples[['beta', 'gamma', 'rho']].mean()
     print(f"Inferred Beta:  {means['beta']:.4f}")
     print(f"Inferred Gamma: {means['gamma']:.4f}")
     print(f"Inferred Rho:   {means['rho']:.4f}")
-    print("="*30)
 
     # Visualization
     plt.figure(figsize=(15, 5))
